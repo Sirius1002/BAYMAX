@@ -1,0 +1,104 @@
+Baymax Interaction Module :
+..............................................
+
+Step 1: Hardware Setup
+Components:
+Raspberry Pi (or a laptop for initial testing).
+USB Microphone (or an inbuilt laptop mic for testing).
+Speakers or headphone jack for audio output.
+Assembly:
+Connect the microphone to the Raspberry Pi/laptop.
+Connect speakers to the Raspberry Pi/laptop or use inbuilt ones.
+-------------------------------------
+Let’s break down the hardware setup into detailed steps to ensure everything is clear and manageable.
+
+1. Hardware Components
+
+a. Raspberry Pi (or Laptop)  
+Purpose: This serves as the brain of our Baymax, where all the software runs.  
+Raspberry Pi Recommendation: Raspberry Pi 4 (Model B) with 4GB or 8GB RAM.  
+Laptop Option: If you’re testing initially, you can use your laptop to save setup time.  
+
+b. USB Microphone  
+Purpose: To capture voice commands from the user.  
+Options:  
+- USB microphones: Easy to use and compatible with Raspberry Pi and laptops (e.g., Samson Go Mic or FIFINE USB Microphones).  
+- If you’re using a laptop, the inbuilt mic works fine for testing.  
+
+c. Speakers or Headphones  
+Purpose: To output Baymax’s responses (text-to-speech functionality).  
+Options:  
+- External speakers (via a 3.5mm jack or Bluetooth).  
+- Headphones for testing if speakers are unavailable.  
+
+2. Setting Up the Raspberry Pi  
+
+a. Install the OS  
+1. Download and install Raspberry Pi OS (formerly Raspbian) from the official site.  
+2. Flash the OS onto an SD card using a tool like Balena Etcher.  
+3. Insert the SD card into the Raspberry Pi and power it on.  
+
+b. Connect Peripherals  
+1. Connect the USB Microphone: Plug it into one of the Raspberry Pi's USB ports.  
+2. Connect Speakers: Use the 3.5mm audio jack on the Raspberry Pi or pair Bluetooth speakers.  
+3. Keyboard and Mouse: For initial setup, connect these via USB or Bluetooth.  
+4. Monitor: Connect via HDMI if needed, or use remote access tools like VNC or SSH.  
+
+c. Test Audio Input and Output  
+1. Open the terminal and check the microphone:  
+   arecord -l  
+   This lists the connected audio devices.  
+2. Test audio output:  
+   speaker-test -t wav -c 2  
+   You should hear static noise if the speakers are working.  
+
+3. Laptop Setup (Alternative)  
+
+a. Using Inbuilt Microphone  
+Most laptops have inbuilt microphones, so you can skip the USB microphone for initial tests. Simply use the default mic settings.  
+
+b. Audio Output  
+Test the audio output by playing any sound file or using online tools.  
+Connect external speakers if the inbuilt laptop speakers are not loud enough.  
+
+4. Assembly Instructions  
+
+a. Hardware Connection  
+1. Microphone: Ensure the USB mic is securely connected to the Raspberry Pi or laptop.  
+2. Speakers: Connect them via the 3.5mm audio jack or Bluetooth. For Raspberry Pi: Pair Bluetooth speakers via the “Bluetooth” menu in the taskbar.  
+3. Power Supply: If using a Raspberry Pi, connect a 5V/3A power adapter.  
+4. Network: Connect the Raspberry Pi to Wi-Fi or use an Ethernet cable.  
+
+b. Cable Management  
+Keep the microphone and speaker cables organized to prevent tangling.  
+Use Velcro strips or zip ties to manage excess cable lengths.  
+
+5. Testing Your Hardware  
+
+a. Microphone Test  
+1. Open a terminal or command prompt.  
+2. Record a short audio snippet:  
+   arecord -D plughw:1,0 -d 5 test.wav  
+   Replace plughw:1,0 with your microphone's device name.  
+3. Play the recorded audio to verify:  
+   aplay test.wav  
+
+b. Speaker Test  
+1. Play a test sound:  
+   speaker-test -t sine -f 440 -c 2  
+2. Adjust the volume as necessary.  
+
+6. Troubleshooting Tips  
+
+Microphone Not Detected:  
+- Ensure the microphone is connected securely.  
+- Reboot the system and check arecord -l again.  
+
+No Audio Output:  
+- Check the default audio output device in settings.  
+- Ensure the speakers are powered on and correctly connected.  
+
+Wi-Fi Issues on Raspberry Pi:  
+- Use an Ethernet cable for a stable connection during setup.  
+- Check Wi-Fi settings using:  
+   sudo raspi-config  
