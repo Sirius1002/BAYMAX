@@ -2,6 +2,8 @@
 
 Welcome to the Baymax project, an AI-powered virtual assistant inspired by Disney's Big Hero 6. This project combines hardware and software to create an interactive companion that can assist with healthcare advice, reminders, and everyday tasks.
 
+POV JUST AN IDEATION RIGHT NOW
+
 ## Features
 
 - **Voice Interaction:** Baymax listens and responds to user queries using speech recognition and text-to-speech.
